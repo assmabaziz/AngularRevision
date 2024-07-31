@@ -1,0 +1,97 @@
+<nav class="bg-[#2c3e50] fixed top-0 left-0 right-0 z-[100]">
+  <div class="container flex justify-between items-center w-[80%] h-[100px] ">
+    <h1 class="text-white uppercase font-bold text-[30px]">start framework</h1>
+    <div class="nav-links">
+      <ul class="flex items-center gap-5">
+        <li>
+          <a href="#" class="text-white uppercase font-semibold">
+            about
+          </a>
+        </li>
+        <li>
+          <a href="#" class="text-white uppercase font-semibold">
+            portfolio
+          </a>
+        </li>
+        <li>
+          <a href="#" class="text-white uppercase font-semibold">
+            contact
+          </a>
+        </li>
+        <li>
+          <button (click)="sayHi()"
+            class="text-white capitalize font-semibold  border-2 rounded-[10px] p-2 hover:text-[#2c3e50] hover:bg-white">click</button>
+        </li>
+        <li class="flex flex-col">
+          <input id="serchValue" type="text" class="border-2 rounded-[10px] focus:outline-none"
+            [(ngModel)]="searchValue">
+          <p class="text-white">{{searchValue}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="home bg-[#1abc9c] ">
+  <div class="container py-10">
+    <div class="content flex items-center justify-center flex-col gap-10 mt-[100px] py-10">
+      <img [src]="srcImage" class="w-[250px]" alt="">
+      <h2
+        class="text-white uppercase font-bold text-[30px] w-fit relative after:content-['************'] after:absolute after:bottom-[-80%] after:left-[50%] after:translate-x-[-50%] ">
+        start framework</h2>
+      <p class="text-[#2c3e50] uppercase font-semibold text-[25px]">my name is {{x}}</p>
+      <span>
+        <p class="text-white">Graphic Artist - Web Designer - Illustrator</p>
+      </span>
+    </div>
+  </div>
+</section>
+<section class="products bg-[#1abc9c]">
+  <div class="container w-[80%] py-20">
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      @for (product of products; track $index) {
+      <figure class="border-2 rounded-md bg-slate-100">
+        <img [src]="product.imgSource" class="w-full" alt="">
+        <figcaption class="text-center py-5">
+          <h2 class="font-bold text-[20px] capitalize">name: {{product.name}}</h2>
+          <h2 class="font-bold text-[20px] capitalize">model: {{product.model}}</h2>
+          <span class="font-bold text-[20px] capitalize">price: {{product.price}}</span>
+          <span class="flex justify-center w-full font-bold text-[20px] capitalize ">
+
+            @if(product.onSale) {
+            <p class="bg-green-500 p-2">On sale: yes</p>
+            }@else {<p class="bg-red-500 p-2"> On sale: No</p>}
+          </span>
+          <h5 class="font-medium text-[18px] capitalize my-[10px]">index: {{$index}}</h5>
+          <h4 class="font-medium text-[18px] capitalize mb-[10px]">count: {{$count}}</h4>
+          <h4 class="font-medium text-[18px] capitalize mb-[10px]">hello first: {{$first}}</h4>
+          <h4 class="font-medium text-[18px] capitalize mb-[10px]">hello last: {{$last}}</h4>
+          <h4 class="font-medium text-[18px] capitalize mb-[10px]">hello even: {{$even}}</h4>
+          <h4 class="font-medium text-[18px] capitalize mb-[10px]">hello odd: {{$odd}}</h4>
+        </figcaption>
+      </figure>
+      }
+
+    </div>
+  </div>
+</section>
+<section class="about bg-[#2c3e50] text-white">
+  <div class="container w-[80%] flex justify-between items-center py-16 ">
+    <div class="box text-center max-w-[400px]">
+      <h2 class="uppercase text-[30px] font-medium">location</h2>
+      <span>2215 John Daniel Drive</span>
+      <p>Clark, MO 65243</p>
+    </div>
+    <div class="box text-center max-w-[400px]">
+      <h2 class="uppercase text-[30px] font-medium">around the web</h2>
+      <span>here should be some social media icons</span>
+      <p>but I have a problem with fontawesome</p>
+    </div>
+    <div class="box text-center max-w-[400px] ">
+      <h2 class="uppercase text-[30px] font-medium">about freelancer</h2>
+      <p>Freelance is a free to use, licensed Bootstrap theme created by Route</p>
+    </div>
+  </div>
+</section>
+<footer class="bg-[#1a252f] py-8">
+  <p class="text-white text-center">Copyright &#169; Your Website 2021</p>
+</footer>
